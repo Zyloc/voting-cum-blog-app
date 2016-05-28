@@ -6,4 +6,4 @@ from django.views.generic import View
 
 class Home(View):
 	def get(self,request):
-		return HttpResponse('Hello welcome newbie!!')
+		return HttpResponse('Hello!! welcome newbie')
