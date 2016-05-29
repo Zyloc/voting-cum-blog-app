@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 
+from django.core.urlresolvers import reverse
 from django.db import models
 
 # Create your models here.
@@ -15,3 +16,5 @@ class Idea(models.Model):
 	updated = models.DateTimeField(auto_now=True, auto_now_add=False)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
+	def get_absolute_url(self):
+		return reverse("voteCumBlog:detail",kwargs={'pk':self.pk})

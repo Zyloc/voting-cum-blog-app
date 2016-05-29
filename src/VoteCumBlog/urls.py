@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from .views import Home
+from .views import *
 
 urlpatterns = [
     url(r'^$', Home.as_view(), name='home'),
+    url(r'^createpost/$', CreatePost.as_view(), name='create'),
+    url(r'^detail/(?P<pk>[\d-]+)/', PostDetail.as_view(), name='detail'),
 ]
