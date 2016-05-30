@@ -20,5 +20,6 @@ from .views import *
 urlpatterns = [
     url(r'^$', Home.as_view(), name='home'),
     url(r'^createpost/$', CreatePost.as_view(), name='create'),
-    url(r'^detail/(?P<pk>[\d-]+)/', PostDetail.as_view(), name='detail'),
+    url(r'^(?P<pk>[\d-]+)/updatepost$', UpdatePost.as_view(), name='update'),
+    url(r'^(?P<pk>[\d-]+)/', PostDetail.as_view(), name='detail'),
 ]
