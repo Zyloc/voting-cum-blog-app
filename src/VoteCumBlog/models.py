@@ -22,7 +22,7 @@ def upload_location(instance,filename):
 class Idea(models.Model):
 	title = models.CharField(max_length=120)
 	author = models.CharField(max_length=120)
-	cover_image = models.ImageField(upload_to=upload_location,null=True,blank=True)
+	cover_image = models.ImageField(upload_to="blogImages/",null=True,blank=True)
 	content = models.TextField()
 	slug = models.SlugField(unique=True,default=None)
 	updated = models.DateTimeField(auto_now=True, auto_now_add=False)
@@ -36,7 +36,7 @@ class Idea(models.Model):
 		ordering = ["-timestamp","-updated"]
 		
 	def get_absolute_url(self):
-		return reverse("voteCumBlog:detail",kwargs={'pk':self.pk})
+		return reverse("voteCumBlog:detail",kwargs={'slug':self.slug})
 
 def create_slug(instance, new_slug=None):
 	slug = slugify(instance.title)

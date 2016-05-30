@@ -10,7 +10,7 @@
 						<img class="img-responsive" src="{{ obj.cover_image.url }}" alt="{{ obj.title }}">
 					{% endif %} 
 					<div class="caption">
-						<h3><a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a><small style="float:right;"> {{ obj.timestamp|timesince }}</small></h3>
+						<h3><a href="{{ MEDIA_URL }} {{ cover_image.url }}">{{ obj.title }}</a><small style="float:right;"> {{ obj.timestamp|timesince }}</small></h3>
 						<p> {{ obj.content }} </p>
 						<p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View</a></p> 
 					</div>
